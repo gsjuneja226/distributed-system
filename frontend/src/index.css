@@ -1,0 +1,95 @@
+/**
+ * Global Design & Styling System
+ * =============================
+ * Configures the fundamental visual tokens for the CampusGrid dashboard.
+ * Extends Tailwind CSS with project-specific utilities for status indicators 
+ * and animations.
+ *
+ * Layers:
+ * - Base: Core resets and typography.
+ * - Components: Reusable pattern-level styles.
+ * - Utilities: Status badges, pulse effects, and custom scrollbars.
+ */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* 
+   * Default body and typography settings.
+   * Applies the dark-themed glassmorphism tokens 
+   * defined in the Tailwind config.
+   */
+  body {
+    @apply bg-bg-page text-text-primary font-sans;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* 
+   * High-Precision Scrollbar Control
+   * Optimized for thin, dark-mode interfaces to maintain a premium look.
+   */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-zinc-800 rounded-full;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-zinc-700;
+  }
+}
+
+@layer utilities {
+  /**
+   * Semantic Status Utility Classes
+   * Standardizes the look of Job/Node states across all dashboard screens.
+   */
+  .status-queued {
+    @apply bg-neutral-900 text-neutral-500 border border-border-DEFAULT;
+  }
+  .status-dispatched {
+    @apply bg-purple-900/30 text-purple-400 border border-primary-blue/30;
+  }
+  .status-running {
+    @apply bg-amber-900/30 text-amber-400 border border-accent-amber/30;
+  }
+  .status-done {
+    @apply bg-emerald-900/30 text-emerald-400 border border-accent-mint/30;
+  }
+  .status-failed {
+    @apply bg-red-900/30 text-red-400 border border-accent-red/30;
+  }
+  .status-expired {
+    @apply bg-neutral-900 text-neutral-500 border border-border-DEFAULT;
+  }
+
+  /**
+   * Micro-interaction: Pulse Dot
+   * Used for 'Live' indicators on the dashboard and node monitoring.
+   */
+  .pulse-dot {
+    animation: pulse 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+}
+
+/* Keyframe Animations */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.2;
+  }
+}
