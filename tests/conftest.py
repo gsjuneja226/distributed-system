@@ -1,11 +1,11 @@
-# CampusGrid Global Test Configuration
+# easycompute Global Test Configuration
 import pytest
 import psycopg2
 from psycopg2.extras import RealDictCursor
 import redis
 import os
 
-TEST_DB_URL = os.getenv("TEST_DATABASE_URL", "postgresql://admin:secret@localhost:5432/campusgrid_test")
+TEST_DB_URL = os.getenv("TEST_DATABASE_URL", "postgresql://admin:secret@localhost:5432/easycompute_test")
 TEST_REDIS_URL = os.getenv("TEST_REDIS_URL", "redis://localhost:6379/15")
 
 

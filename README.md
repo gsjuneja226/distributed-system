@@ -1,8 +1,8 @@
-# 🌌 CampusGrid
+# 🌌 easycompute
 
 > **Building a supercomputer out of idle distributed hardware.**
 
-CampusGrid is a high-performance distributed computing platform designed to harness the collective idle power of students' laptops across a university campus. It allows researchers and students to submit heavy computational workloads (Python jobs, ML training, data processing) packaged as **Docker containers**, which are then intelligently dispatched to available laptops (nodes) in the network.
+easycompute is a high-performance distributed computing platform designed to harness the collective idle power of students' laptops across a university campus. It allows researchers and students to submit heavy computational workloads (Python jobs, ML training, data processing) packaged as **Docker containers**, which are then intelligently dispatched to available laptops (nodes) in the network.
 
 ---
 
@@ -24,7 +24,7 @@ CampusGrid is a high-performance distributed computing platform designed to harn
 
 ## 🚀 Development Philosophy
 
-The development of CampusGrid was driven by a single problem: **expensive cloud compute vs. wasted local hardware.** While students have powerful GPUs and multi-core CPUs in their backpacks, they rarely use them at 100% capacity. CampusGrid bridges this gap by providing:
+The development of easycompute was driven by a single problem: **expensive cloud compute vs. wasted local hardware.** While students have powerful GPUs and multi-core CPUs in their backpacks, they rarely use them at 100% capacity. easycompute bridges this gap by providing:
 
 - **Zero-Trust Isolation**: Jobs run in secure Docker sandboxes with no access to the host filesystem.
 - **Resilient Scheduling**: A custom "Round-Robin with Penalty" load balancer ensures jobs are spread across the grid even if one node is significantly more powerful.
@@ -61,7 +61,7 @@ import pandas as pd
 df = pd.read_csv("data.csv")
 result = df.describe()
 
-# Save result to /output - CampusGrid will automatically collect this!
+# Save result to /output - easycompute will automatically collect this!
 os.makedirs("/output", exist_ok=True)
 result.to_csv("/output/results.csv")
 ```
@@ -70,28 +70,28 @@ result.to_csv("/output/results.csv")
 
 > **📦 Pre-built Example Images**
 >
-> To get started quickly, you can reference or pull the following pre-built CampusGrid job images:
+> To get started quickly, you can reference or pull the following pre-built easycompute job images:
 >
 > | Image | Description |
 > |---|---|
-> | `madhavkochhar/campusgrid-csv-job:latest` | Simple data manipulation and statistics |
-> | `madhavkochhar/campusgrid-sklearn-job:latest` | Classic Machine Learning classification |
-> | `madhavkochhar/campusgrid-pytorch-job:latest` | Heavy-duty Deep Learning and GPU testing |
+> | `madhavkochhar/easycompute-csv-job:latest` | Simple data manipulation and statistics |
+> | `madhavkochhar/easycompute-sklearn-job:latest` | Classic Machine Learning classification |
+> | `madhavkochhar/easycompute-pytorch-job:latest` | Heavy-duty Deep Learning and GPU testing |
 
 Build and push your own image to a registry (like Docker Hub):
 
 ```bash
 # Build
-docker build -t your-username/campusgrid-job:v1 .
+docker build -t your-username/easycompute-job:v1 .
 
 # Push
-docker push your-username/campusgrid-job:v1
+docker push your-username/easycompute-job:v1
 ```
 
 ### 3. Deploy to Grid
 
 1. Navigate to the **Submit Job** tab in the Dashboard.
-2. Enter your Image Name (`your-username/campusgrid-job:v1`).
+2. Enter your Image Name (`your-username/easycompute-job:v1`).
 3. Set your **Distributed Splitting** value (e.g., "2 Chunks") to run your job in parallel across 2 laptops!
 4. Hit **Submit** and watch the grid take over.
 
@@ -111,8 +111,8 @@ Contribute your idle CPU/GPU and earn power credits while supporting campus rese
 
 **1. Clone the Agent Code:**
 ```bash
-git clone https://github.com/Madhav-Kochhar7/campusgrid.git
-cd campusgrid/agent
+git clone https://github.com/Madhav-Kochhar7/easycompute.git
+cd easycompute/agent
 ```
 
 **2. Get JWT Token:**
@@ -133,7 +133,7 @@ pip install -r requirements.txt
 
 Create a `.env` file in the `agent/` folder:
 ```env
-SCHEDULER_URL=https://campusgrid-api.onrender.com
+SCHEDULER_URL=https://easycompute-api.onrender.com
 USER_TOKEN=YOUR_PRIVATE_JWT_HERE
 ```
 > Your token can be copied from the **Contribute Node** page on the dashboard.
@@ -167,4 +167,4 @@ To incentivize high-uptime contributors, we are developing a **Payment Integrity
 
 ## 📜 License
 
-Developed by the CampusGrid team. Distributed under the **MIT License**.
+Developed by the easycompute team. Distributed under the **MIT License**.

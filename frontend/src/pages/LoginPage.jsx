@@ -73,7 +73,7 @@ export default function LoginPage() {
              <Cpu size={40} className="text-purple-500 relative z-10 transition-transform group-hover:scale-110 duration-500" />
           </div>
           <h1 className="text-4xl font-black text-white tracking-tighter uppercase italic">
-            CampusGrid
+            easycompute
             <span className="text-purple-500 ml-1 inline-block animate-bounce text-2xl">.</span>
           </h1>
           <p className="text-[11px] text-zinc-500 mt-4 font-black uppercase tracking-[0.4em] opacity-80">Distributed Intelligence</p>

@@ -1,7 +1,7 @@
 /**
  * Dashboard Overview Page
  * =======================
- * The primary mission control view for the CampusGrid platform.
+ * The primary mission control view for the easycompute platform.
  * Displays high-level metrics, active compute nodes, recent job history, 
  * and a system activity timeline.
  * 

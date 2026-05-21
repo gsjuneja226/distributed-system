@@ -1,5 +1,5 @@
 /**
- * CampusGrid Application Root
+ * easycompute Application Root
  * ===========================
  * The central orchestration point for the frontend ecosystem.
  * 

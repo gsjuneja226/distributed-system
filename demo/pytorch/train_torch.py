@@ -1,5 +1,5 @@
 """
-CampusGrid Demo: PyTorch Model Training
+easycompute Demo: PyTorch Model Training
 =======================================
 A reference implementation for a machine learning workload (Deep Learning).
 Demonstrates how to utilize hardware acceleration (CUDA) and report 
@@ -24,7 +24,7 @@ chunk = int(os.environ.get("CHUNK_INDEX", 0))
 total = int(os.environ.get("CHUNK_TOTAL", 1))
 
 # Hardware Abstraction Layer
-# CampusGrid Project Hardware Detection
+# easycompute Project Hardware Detection
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 print(f"[demo] Node Shard {chunk}/{total} | Device: {device}")
 if torch.cuda.is_available():

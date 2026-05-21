@@ -5,7 +5,7 @@
  * contribute their own hardware (laptops, servers) as compute nodes.
  * 
  * Flow:
- * 1. Agent Deployment: Script-based installation of the CampusGrid daemon.
+ * 1. Agent Deployment: Script-based installation of the easycompute daemon.
  * 2. Grid Authentication: Linking physical hardware to a user account via JWT.
  * 3. Status Verification: Diagnostic commands to confirm connectivity.
  */
@@ -45,7 +45,7 @@ export default function ContributePage() {
         </div>
         <p className="text-[15px] text-zinc-500 mt-2 font-medium leading-relaxed max-w-3xl">
           Securely contribute your idle compute resources to a distributed network of researchers. 
-          CampusGrid nodes run in high-isolation sandboxes with zero host access, ensuring your security while you earn power credits.
+          easycompute nodes run in high-isolation sandboxes with zero host access, ensuring your security while you earn power credits.
         </p>
       </div>
 
@@ -68,12 +68,12 @@ export default function ContributePage() {
               </div>
               <h2 className="text-2xl font-black text-white mb-4 uppercase tracking-tight">Agent Deployment</h2>
                <p className="text-[14px] text-zinc-500 mb-8 leading-relaxed max-w-2xl font-medium">
-                 Follow the setup instructions in the GitHub repository to initialize the CampusGrid agent on your machine. You'll need <span className="text-zinc-300">Python 3.10+</span> and <span className="text-zinc-300">Docker Desktop</span> running before you begin.
+                 Follow the setup instructions in the GitHub repository to initialize the easycompute agent on your machine. You'll need <span className="text-zinc-300">Python 3.10+</span> and <span className="text-zinc-300">Docker Desktop</span> running before you begin.
                </p>
                
                {/* GitHub repo link */}
                <a
-                 href="https://github.com/Madhav-Kochhar7/campusgrid"
+                 href="https://github.com/Madhav-Kochhar7/easycompute"
                  target="_blank"
                  rel="noopener noreferrer"
                  className="inline-flex items-center gap-3 px-6 py-3.5 mb-8 rounded-2xl bg-purple-500/10 border border-purple-500/20 text-purple-400 text-[13px] font-black uppercase tracking-widest hover:bg-purple-500/20 hover:border-purple-500/40 transition-all group/link"
@@ -87,7 +87,7 @@ export default function ContributePage() {
                  <div>
                    <label className="block text-[10px] text-zinc-600 mb-3 font-black uppercase tracking-[0.2em] px-1">1 — Clone & Navigate</label>
                    <CodeBlock 
-                     code={`git clone https://github.com/Madhav-Kochhar7/campusgrid.git\ncd campusgrid/agent`}
+                     code={`git clone https://github.com/Madhav-Kochhar7/easycompute.git\ncd easycompute/agent`}
                      language="bash" 
                    />
                  </div>
@@ -157,7 +157,7 @@ export default function ContributePage() {
                       <span className="text-[10px] text-zinc-600 font-bold uppercase tracking-widest">Environment Overrides (.env)</span>
                    </div>
                     <CodeBlock 
-                      code={`SCHEDULER_URL=https://api.grid.campus.edu\nUSER_TOKEN=YOUR_PRIVATE_TOKEN_HERE`}
+                      code={`SCHEDULER_URL=http://${window.location.hostname}:8000\nUSER_TOKEN=YOUR_PRIVATE_TOKEN_HERE`}
                       language="env" 
                     />
                 </div>
@@ -187,7 +187,7 @@ export default function ContributePage() {
               <div>
                 <label className="block text-[10px] text-zinc-600 mb-3 font-black uppercase tracking-[0.2em] px-1">Health Check Diagnostics</label>
                 <CodeBlock 
-                  code={`# Verify daemon status\nsudo systemctl status campusgrid\n\n# Observe live dispatch cycles\nsudo journalctl -u campusgrid -f`}
+                  code={`# Verify daemon status\nsudo systemctl status easycompute\n\n# Observe live dispatch cycles\nsudo journalctl -u easycompute -f`}
                   language="bash" 
                 />
               </div>

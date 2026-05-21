@@ -1,5 +1,5 @@
 """
-CampusGrid API Root
+easycompute API Root
 ===================
 The primary entry point for the Python/FastAPI backend.
 
@@ -23,7 +23,7 @@ from routers import auth, jobs, nodes, ws
 os.makedirs(settings.RESULTS_DIR, exist_ok=True)
 
 app = FastAPI(
-    title="CampusGrid API",
+    title="easycompute API",
     description="Campus distributed computing platform",
     version="1.0.0"
 )
@@ -74,7 +74,7 @@ def health():
     Infrastructure Health Check.
     Used by load balancers and deployment probes to verify service availability.
     """
-    return {"status": "ok", "service": "campusgrid"}
+    return {"status": "ok", "service": "easycompute"}
 
 
 # --- Router Inclusions ---

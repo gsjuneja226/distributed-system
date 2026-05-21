@@ -1,5 +1,5 @@
 """
-CampusGrid: Redis Connectivity Diagnostic
+easycompute: Redis Connectivity Diagnostic
 ========================================
 A standalone script to verify the connection between a worker node 
 and the Redis message broker. 

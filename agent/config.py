@@ -16,8 +16,11 @@ if os.path.exists(env_path):
 else:
     print(f"[config] WARNING: {env_path} not found. Using defaults.")
 
+# Networking Helpers
+SERVER_IP = os.getenv("SERVER_IP", "localhost")
+
 # Central scheduler URL (where the agent registers and sends heartbeats)
-SCHEDULER_URL = os.getenv("SCHEDULER_URL", "http://localhost:8000").rstrip("/")
+SCHEDULER_URL = os.getenv("SCHEDULER_URL", f"http://{SERVER_IP}:8000").rstrip("/")
 
 # Unique node identifier and authentication token (assigned by scheduler)
 NODE_ID = os.getenv("NODE_ID", "")
@@ -27,11 +30,10 @@ NODE_TOKEN = os.getenv("NODE_TOKEN", "")
 USER_TOKEN = os.getenv("USER_TOKEN", "")
 
 # Redis connection string for job polling
-# Using 127.0.0.1 instead of localhost for local dev to avoid Windows IPv6 issues
-REDIS_URL = os.getenv("REDIS_URL", "redis://127.0.0.1:6379/0")
+REDIS_URL = os.getenv("REDIS_URL", f"redis://{SERVER_IP}:6380/0")
 
 # Docker registry used for pulling job images
-DOCKER_REGISTRY = os.getenv("DOCKER_REGISTRY", "localhost:5000")
+DOCKER_REGISTRY = os.getenv("DOCKER_REGISTRY", f"{SERVER_IP}:5000")
 
 # Path to the .env file for persistence
 ENV_FILE = os.path.join(os.path.dirname(__file__), ".env")

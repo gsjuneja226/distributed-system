@@ -1,5 +1,5 @@
 /**
- * CampusGrid Design System Configuration
+ * easycompute Design System Configuration
  * =====================================
  * Defines the persistent visual tokens (colors, typography, spacing) 
  * for the Tailwind CSS framework.

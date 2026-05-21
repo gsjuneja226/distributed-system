@@ -1,7 +1,7 @@
 /**
  * Centralized API Client
  * ======================
- * Manages all outgoing HTTP traffic to the CampusGrid backend.
+ * Manages all outgoing HTTP traffic to the easycompute backend.
  * 
  * Features:
  * - Base URL configuration via environment variables.
@@ -12,8 +12,8 @@
 import axios from 'axios'
 
 const api = axios.create({
-  // Use VITE_API_URL if defined, otherwise fallback to the production cloud endpoint (Render).
-  baseURL: import.meta.env.VITE_API_URL || 'https://campusgrid-api.onrender.com',
+  // Using relative path to leverage the Nginx proxy configured in docker-compose/nginx.conf
+  baseURL: '/api',
 })
 
 // Memory-persisted token reference

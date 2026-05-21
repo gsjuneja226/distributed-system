@@ -1,4 +1,4 @@
-# CampusGrid Production Orchestration
+# easycompute Production Orchestration
 # ===================================
 # Provides overrides for the base docker-compose.yml to optimize 
 # for stability, performance, and security in a production environment.
@@ -17,7 +17,7 @@ version: "3.9"
 services:
   # API Scheduler (Production)
   backend:
-    image: ${DOCKER_USERNAME}/campusgrid-backend:latest
+    image: ${DOCKER_USERNAME}/easycompute-backend:latest
     restart: always
     # Enable multiple workers for concurrent request handling
     command: uvicorn main:app --host 0.0.0.0 --port 8000 --workers 4
@@ -28,7 +28,7 @@ services:
 
   # Web Dashboard (Production)
   frontend:
-    image: ${DOCKER_USERNAME}/campusgrid-frontend:latest
+    image: ${DOCKER_USERNAME}/easycompute-frontend:latest
     restart: always
 
   # Relational Store (Production)

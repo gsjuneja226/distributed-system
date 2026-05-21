@@ -11,7 +11,7 @@ from typing import List
 
 class Settings(BaseSettings):
     # Core Infrastructure
-    DATABASE_URL: str = "postgresql://admin:secret@localhost:5432/campusgrid"
+    DATABASE_URL: str = "postgresql://admin:secret@localhost:5432/easycompute"
     REDIS_URL: str = "redis://localhost:6379/0"
     
     # Security and Session Management

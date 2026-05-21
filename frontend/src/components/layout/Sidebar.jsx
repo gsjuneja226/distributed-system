@@ -1,7 +1,7 @@
 /**
  * Main Application Sidebar
  * ========================
- * The primary navigation anchor for the CampusGrid dashboard. 
+ * The primary navigation anchor for the easycompute dashboard. 
  * Handles routing links, user identity display, and session termination.
  * 
  * Layouts:
@@ -35,7 +35,7 @@ export default function Sidebar() {
       {/* Mobile-Only Header Bar */}
       <div className="md:hidden h-14 w-full bg-bg-sidebar border-b border-border-DEFAULT fixed top-0 z-40 flex items-center px-4">
         <Cpu size={20} className="text-primary-blue mr-3" />
-        <span className="font-semibold text-text-primary">CampusGrid</span>
+        <span className="font-semibold text-text-primary">easycompute</span>
       </div>
 
       {/* Primary Desktop / Heavy Tablet Sidebar */}
@@ -52,7 +52,7 @@ export default function Sidebar() {
               <Cpu size={16} className="text-primary-blue" />
             </div>
             {!collapsed && (
-              <span className="font-bold text-text-primary text-xl tracking-tight truncate">CampusGrid</span>
+              <span className="font-bold text-text-primary text-xl tracking-tight truncate">easycompute</span>
             )}
           </div>
           {!collapsed && (

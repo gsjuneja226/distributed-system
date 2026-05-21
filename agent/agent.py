@@ -1,5 +1,5 @@
 """
-CampusGrid Node Agent
+easycompute Node Agent
 =====================
 This script runs on the worker node (student laptop). It registers the node 
 with the central scheduler, listens for incoming computing jobs via Redis, 
@@ -166,4 +166,4 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    main()

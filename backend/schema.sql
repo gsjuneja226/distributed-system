@@ -1,4 +1,4 @@
--- CampusGrid PostgreSQL Schema
+-- easycompute PostgreSQL Schema
 -- ============================
 -- Bootstraps the distributed computing platform's data layer.
 -- Highlights:

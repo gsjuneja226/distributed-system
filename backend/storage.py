@@ -72,4 +72,4 @@ def generate_presigned_url(object_name: str, expiration: int = 3600) -> str:
         return response
     except Exception as e:
         print(f"[storage] Error generating presigned URL: {e}")
-        return None
+        return None

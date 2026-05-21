@@ -1,5 +1,5 @@
 """
-CampusGrid: API Connectivity Diagnostic
+easycompute: API Connectivity Diagnostic
 =======================================
 A standalone script to verify the reachability of the central scheduler 
 API from a worker node or development machine. 
@@ -12,7 +12,7 @@ Usage:
 import requests
 
 # Target endpoint for connectivity verification
-url = "https://campusgrid-api.onrender.com/nodes/register"
+url = "https://easycompute-api.onrender.com/nodes/register"
 print(f"[diag] Testing POST to {url}...")
 
 try:

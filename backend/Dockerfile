@@ -22,6 +22,6 @@ RUN mkdir -p /app/results
 # Inform Docker that the web server listens on port 8000
 EXPOSE 8000
 
-# Entry point: start the Uvicorn ASGI server
-
-CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
+# Entry point: run the startup script (initializes DB and starts Uvicorn)
+RUN chmod +x start.sh
+CMD ["./start.sh"]

@@ -27,8 +27,8 @@ export function useJobSocket(jobId) {
    */
   const connect = useCallback(() => {
     if (!jobId) return
-    const wsUrl = import.meta.env.VITE_WS_URL || 'ws://localhost:8000'
-    const url = `${wsUrl}/ws/jobs/${jobId}`
+    const protocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:'
+    const url = `${protocol}//${window.location.host}/ws/jobs/${jobId}`
 
     ws.current = new WebSocket(url)
     setSocketStatus('connecting')

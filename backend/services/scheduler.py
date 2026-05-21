@@ -1,7 +1,7 @@
 """
 Grid Scheduler Service
 ======================
-The brain of the CampusGrid platform. Responsible for matching queued 
+The brain of the easycompute platform. Responsible for matching queued 
 computational workloads with available, healthy compute nodes.
 
 Features:

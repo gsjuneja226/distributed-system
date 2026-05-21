@@ -1,4 +1,4 @@
-# CampusGrid Node Agent: Python Dependencies
+# easycompute Node Agent: Python Dependencies
 # ----------------------------------------
 requests==2.31.0
 psutil==5.9.8

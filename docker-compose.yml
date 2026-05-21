@@ -1,4 +1,4 @@
-# CampusGrid Local Development Stack
+# easycompute Local Development Stack
 # =================================
 # Orchestrates the core infrastructure required for the distributed 
 # platform to operate on a single machine.
@@ -19,15 +19,15 @@ services:
     image: postgres:15-alpine
     restart: unless-stopped
     environment:
-      POSTGRES_DB: campusgrid
       POSTGRES_USER: admin
       POSTGRES_PASSWORD: secret
+      POSTGRES_DB: easycompute
     ports: ["5432:5432"]
     volumes:
       - postgres_data:/var/lib/postgresql/data
       - ./backend/schema.sql:/docker-entrypoint-initdb.d/schema.sql
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U admin -d campusgrid"]
+      test: ["CMD-SHELL", "pg_isready -U admin -d easycompute"]
       interval: 5s
       timeout: 5s
       retries: 5
@@ -36,7 +36,7 @@ services:
   redis:
     image: redis:7-alpine
     restart: unless-stopped
-    ports: ["6379:6379"]
+    ports: ["6380:6379"]
     healthcheck:
       test: ["CMD", "redis-cli", "ping"]
       interval: 5s
@@ -66,7 +66,6 @@ services:
     volumes:
       - ./backend:/app
       - ./results:/app/results
-    command: uvicorn main:app --host 0.0.0.0 --port 8000 --reload
 
   # Web Dashboard: Frontend
   # Maps to port 3000 for local access.
@@ -77,8 +76,8 @@ services:
     depends_on:
       - backend
     environment:
-      - VITE_API_URL=http://localhost:8000
-      - VITE_WS_URL=ws://localhost:8000
+      - VITE_API_URL=http://${SERVER_IP}:8000
+      - VITE_WS_URL=ws://${SERVER_IP}:8000
 
 volumes:
   postgres_data:

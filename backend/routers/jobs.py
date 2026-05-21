@@ -417,4 +417,4 @@ def delete_job(job_id: str, user: dict = Depends(get_current_user)):
     execute("DELETE FROM results     WHERE job_id=%s", (job_id,))
     execute("DELETE FROM heartbeats  WHERE job_id=%s", (job_id,))
     execute("DELETE FROM jobs        WHERE id=%s",     (job_id,))
-    return {"ok": True}
+    return {"ok": True}

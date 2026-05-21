@@ -37,7 +37,7 @@ def run_job(job: dict, node_id: str, node_token: str):
     image = job["image"]
     job_id = job["id"]
     volume_name = f"job_{job_id}_output"
-    container_name = f"campusgrid_{job_id}"
+    container_name = f"easycompute_{job_id}"
 
     print(f"[runner] Pulling image {image}...")
     run_kwargs = {}

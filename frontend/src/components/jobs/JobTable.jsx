@@ -256,4 +256,4 @@ export function JobTable({ jobs, loading, onRetry }) {
       </div>
     </div>
   )
-}
+}
