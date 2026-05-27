@@ -27,6 +27,9 @@ frontend/.vite/
 # Results / outputs
 results/
 *.zip
+results_demo/
+results_primes/
+nothing.txt
 
 # Docker
 .docker/
